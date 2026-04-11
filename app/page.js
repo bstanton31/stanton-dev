@@ -329,7 +329,90 @@ export default function Home() {
           ))}
         </div>
       </section>
+{/* SKILLS */}
+      <section style={{
+        maxWidth: '900px', margin: '0 auto',
+        padding: '120px 2rem',
+      }}>
+        <p style={{
+          fontSize: '0.8rem', letterSpacing: '0.12em', textTransform: 'uppercase',
+          color: '#C2A878', fontWeight: 500, marginBottom: '1rem',
+          fontFamily: 'var(--font-inter)',
+        }}>Skills</p>
+        <h2 style={{
+          fontFamily: 'var(--font-fraunces)', fontSize: '2.4rem',
+          fontWeight: 400, marginBottom: '0.75rem', lineHeight: 1.2,
+        }}>What I know so far.</h2>
+        <p style={{
+          fontFamily: 'var(--font-inter)', fontSize: '1rem',
+          color: '#4a4a4a', lineHeight: 1.8, marginBottom: '3rem',
+        }}>Certifications, tools I actually use, and things I've picked up from coursework and work experience.</p>
 
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '1.5rem' }}>
+          {[
+            {
+              category: 'Certifications',
+              items: [
+                'Google Generative AI (2025)',
+                'Nue.io Advisor Certified',
+                'Salesforce CRM & Trailhead',
+                'MS Office Suite',
+              ],
+            },
+            {
+              category: 'Tools I Use',
+              items: [
+                'Claude & ChatGPT',
+                'Excel & PowerPoint',
+                'Salesforce (basic)',
+                'Word & Outlook',
+              ],
+            },
+            {
+              category: 'From Coursework',
+              items: [
+                'Accounting principles',
+                'Business statistics',
+                'Management information systems',
+                'Business Law',
+                'Marketing fundamentals',
+                'Financial analysis basics',
+              ],
+            },
+            {
+              category: 'From Work',
+              items: [
+                'Point of sale systems',
+                'Inventory & operations',
+                'Customer relationship mgmt',
+                'High volume team coordination',
+              ],
+            },
+          ].map((group, i) => (
+            <div key={i} style={{
+              backgroundColor: '#FAFAFA',
+              border: '1px solid rgba(124,106,158,0.15)',
+              borderRadius: '12px', padding: '1.75rem',
+            }}>
+              <h3 style={{
+                fontFamily: 'var(--font-fraunces)', fontSize: '1rem',
+                fontWeight: 500, color: '#7C6A9E', marginBottom: '1rem',
+              }}>{group.category}</h3>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                {group.items.map(item => (
+                  <li key={item} style={{
+                    fontFamily: 'var(--font-inter)', fontSize: '0.9rem',
+                    color: '#4a4a4a', display: 'flex', alignItems: 'center', gap: '0.5rem',
+                  }}>
+                    <span style={{ color: '#C2A878', fontSize: '0.6rem' }}>✦</span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
       {/* CONTACT */}
       <section id="contact" style={{
         backgroundColor: '#F3F0F8',

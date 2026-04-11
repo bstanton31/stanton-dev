@@ -27,7 +27,7 @@ export default function Home() {
           Ben Stanton
         </span>
         <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
-          {['About', 'Experience', 'Projects', 'Contact'].map(link => (
+          {['About', 'Experience', 'Projects', 'Skills', 'Contact'].map(link => (
             <a key={link} href={`#${link.toLowerCase()}`} style={{
               fontSize: '0.9rem', color: '#2B2B2B', textDecoration: 'none',
               fontFamily: 'var(--font-inter)', fontWeight: 400,

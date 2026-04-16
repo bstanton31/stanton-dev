@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://benstanton.dev
+
+# Sitemaps
+Sitemap: https://benstanton.dev/sitemap.xml

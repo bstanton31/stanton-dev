@@ -183,8 +183,9 @@ export default function Home() {
               date: 'Summer 2026',
               location: 'Remote',
               tags: ['Strategy', 'Operations', 'Communications'],
-              description: 'Boutique consulting firm working with real clients on strategy and operations challenges. Working on projects across communications, data analysis, and professional consulting frameworks.',
+              description: 'Boutique consulting firm working with real clients on strategy and operations challenges. Working on projects across strategy, operations, communications, data analysis, and professional consulting frameworks.',
               featured: true,
+              link: null,
             },
             {
               role: 'Sales & Management Intern',
@@ -194,6 +195,7 @@ export default function Home() {
               tags: ['Sales', 'Management', 'Operations'],
               description: 'Managing 50–100+ daily guest interactions while balancing competing priorities across sales, training, and store operations. Developing real management skills in a high-volume retail environment.',
               featured: false,
+              link: null,
             },
             {
               role: 'Model & Talent',
@@ -203,6 +205,7 @@ export default function Home() {
               tags: ['Client Work', 'Professional'],
               description: 'Professional talent representation. Portfolio work across commercial and print. A different kind of client-facing experience that sharpens presence and communication.',
               featured: false,
+              link: 'https://therockymountainagency.com/divisions/models-men/portfolios/ben-stanton/portfolio',
             },
             {
               role: 'Operations & Hospitality Coordinator',
@@ -212,6 +215,7 @@ export default function Home() {
               tags: ['Operations', 'Leadership'],
               description: 'Coordinated high-volume operations for a team of 20+. Developed stress management and prioritization skills in a fast-paced hospitality environment.',
               featured: false,
+              link: null,
             },
           ].map((job, i) => (
             <div key={i} style={{
@@ -245,6 +249,13 @@ export default function Home() {
                 fontFamily: 'var(--font-inter)', fontSize: '0.95rem',
                 color: '#4a4a4a', lineHeight: 1.7, marginBottom: '1rem',
               }}>{job.description}</p>
+              {job.link && (
+                <a href={job.link} target="_blank" rel="noopener noreferrer" style={{
+                  fontFamily: 'var(--font-inter)', fontSize: '0.85rem',
+                  color: '#7C6A9E', textDecoration: 'none', display: 'block',
+                  marginBottom: '1rem',
+                }}>View portfolio at Rocky Mountain Agency</a>
+              )}
               <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                 {job.tags.map(tag => (
                   <span key={tag} style={{
@@ -280,7 +291,7 @@ export default function Home() {
             {
               title: 'Missoula Demo Sites',
               subtitle: 'Web Agency Portfolio',
-              description: 'Demo websites built for fictional Missoula businesses. Proof of concept for local web agency work. Two sites: a restaurant and a retail shop.',
+              description: 'Demonstration builds showcasing web development work for local Missoula businesses. Two sites: a restaurant and a retail shop.',
               tag: 'Web Dev',
               status: 'active',
             },
@@ -329,8 +340,9 @@ export default function Home() {
           ))}
         </div>
       </section>
-{/* SKILLS */}
-      <section style={{
+
+      {/* SKILLS */}
+      <section id="skills" style={{
         maxWidth: '900px', margin: '0 auto',
         padding: '120px 2rem',
       }}>
@@ -382,10 +394,12 @@ export default function Home() {
             {
               category: 'From Work',
               items: [
-                'Point of sale systems',
-                'Inventory & operations',
-                'Customer relationship mgmt',
-                'High volume team coordination',
+                'Business strategy & consulting',
+                'AI tools & automation',
+                'Data analysis & reporting',
+                'Client relationship management',
+                'High-volume team coordination',
+                'Sales & operations management',
               ],
             },
           ].map((group, i) => (
@@ -413,6 +427,7 @@ export default function Home() {
           ))}
         </div>
       </section>
+
       {/* CONTACT */}
       <section id="contact" style={{
         backgroundColor: '#F3F0F8',
@@ -533,9 +548,19 @@ export default function Home() {
           fontFamily: 'var(--font-fraunces)', fontSize: '1rem',
           color: '#7C6A9E', fontWeight: 500,
         }}>Ben Stanton</span>
-        <span style={{
-          fontFamily: 'var(--font-inter)', fontSize: '0.85rem', color: '#aaa',
-        }}>© 2026 · Missoula, MT</span>
+        <div style={{ display: 'flex', gap: '1.5rem', alignItems: 'center' }}>
+          <a href="https://linkedin.com/in/benstanton31" target="_blank" rel="noopener noreferrer" style={{
+            fontFamily: 'var(--font-inter)', fontSize: '0.85rem',
+            color: '#7C6A9E', textDecoration: 'none',
+          }}>LinkedIn</a>
+          <a href="https://benstanton.dev" style={{
+            fontFamily: 'var(--font-inter)', fontSize: '0.85rem',
+            color: '#7C6A9E', textDecoration: 'none',
+          }}>benstanton.dev</a>
+          <span style={{
+            fontFamily: 'var(--font-inter)', fontSize: '0.85rem', color: '#aaa',
+          }}>2026 · Missoula, MT</span>
+        </div>
       </footer>
 
       <style jsx global>{`
